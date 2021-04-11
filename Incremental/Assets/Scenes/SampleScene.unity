@@ -626,6 +626,18 @@ MonoBehaviour:
     Type: 0
     Value: Manager
     IsUnlocked: 0
+  - Title: Up to 100000 Gold
+    Type: 1
+    Value: 100000Gold
+    IsUnlocked: 0
+  - Title: Up to 10000 Gold
+    Type: 1
+    Value: 10000Gold
+    IsUnlocked: 0
+  - Title: Up to 1000 Gold
+    Type: 1
+    Value: 1000Gold
+    IsUnlocked: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,7 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f342497116cc49043a5c4d63a2498c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoCollectPercentage: 0
+  AutoCollectPercentage: 0.1
   ResourcesConfigs:
   - Name: Click
     UnlockCost: 0

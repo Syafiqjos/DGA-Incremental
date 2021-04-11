@@ -113,6 +113,8 @@ public class GameManager : MonoBehaviour
     {
         TotalGold += value;
         GoldInfo.text = $"Gold: { TotalGold.ToString("0") }";
+
+        AchievementController.Instance.UnlockGoldAchievement(TotalGold);
     }
 
     public void CollectByTap(Vector3 tapPosition, Transform parent)

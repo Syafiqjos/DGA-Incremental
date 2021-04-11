@@ -42,6 +42,24 @@ public class AchievementController : MonoBehaviour
         }
     }
 
+    public void UnlockGoldAchievement(double gold)
+    {
+        if (gold >= 1000000)
+        {
+            UnlockAchievement(AchievementType.UpToGold, "1000000Gold");
+        }
+
+        if (gold >= 100000)
+        {
+            UnlockAchievement(AchievementType.UpToGold, "100000Gold");
+        }
+
+        if (gold >= 10000)
+        {
+            UnlockAchievement(AchievementType.UpToGold, "10000Gold");
+        }
+    }
+
     public void UnlockAchievement(AchievementType type, string value)
     {
         // Mencari data achievement
@@ -74,5 +92,6 @@ public class AchievementData
 
 public enum AchievementType
 {
-    UnlockResource
+    UnlockResource,
+    UpToGold
 }
