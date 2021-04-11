@@ -172,10 +172,8 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public struct ResourceConfig
 {
-
     public string Name;
     public double UnlockCost;
     public double UpgradeCost;
     public double Output;
-
 }
