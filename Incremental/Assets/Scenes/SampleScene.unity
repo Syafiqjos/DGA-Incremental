@@ -1348,12 +1348,16 @@ MonoBehaviour:
     UnlockCost: 0
     UpgradeCost: 1
     Output: 2
+  ResourcesSprites:
+  - {fileID: 21300000, guid: 5f1d0930b30dc2345b419e692c9c54dc, type: 3}
+  - {fileID: 21300000, guid: 2d84b9573a83ae44da9cc998e9c60b2d, type: 3}
   ResourcesParent: {fileID: 894523350}
   ResourcePrefab: {fileID: 2433787157644798809, guid: d30663c80bcb0764bae0381f2c036404, type: 3}
   TapTextPrefab: {fileID: 2524191365097370391, guid: 13d9b9e606a042d4e8b1e4868b165aab, type: 3}
   CoinIcon: {fileID: 1655053853}
   GoldInfo: {fileID: 1917617861}
   AutoCollectInfo: {fileID: 1135852224}
+  TotalGold: 0
 --- !u!1 &1899743427
 GameObject:
   m_ObjectHideFlags: 0

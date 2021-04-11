@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [Range(0f, 1f)]
     public float AutoCollectPercentage = 0.1f;
     public ResourceConfig[] ResourcesConfigs;
+    public Sprite[] ResourcesSprites;
 
     public Transform ResourcesParent;
     public ResourceController ResourcePrefab;
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private List<TapText> _tapTextPool = new List<TapText>();
     private float _collectSecond;
-    private double _totalGold;
+    public double TotalGold;
 
     private void Start()
     {
@@ -51,6 +52,8 @@ public class GameManager : MonoBehaviour
             CollectPerSecond();
             _collectSecond = 0f;
         }
+
+        CheckResourceCost();
 
         CoinIcon.transform.localScale = Vector3.LerpUnclamped(CoinIcon.transform.localScale, Vector3.one * 2f, 0.15f);
         CoinIcon.transform.Rotate(0f, 0f, Time.deltaTime * -100f);
@@ -83,10 +86,10 @@ public class GameManager : MonoBehaviour
         AddGold(output);
     }
 
-    private void AddGold(double value)
+    public void AddGold(double value)
     {
-        _totalGold += value;
-        GoldInfo.text = $"Gold: { _totalGold.ToString("0") }";
+        TotalGold += value;
+        GoldInfo.text = $"Gold: { TotalGold.ToString("0") }";
     }
 
     public void CollectByTap(Vector3 tapPosition, Transform parent)
@@ -119,6 +122,16 @@ public class GameManager : MonoBehaviour
         }
 
         return tapText;
+    }
+
+    private void CheckResourceCost()
+    {
+        foreach (ResourceController resource in _activeResources)
+        {
+            bool isBuyable = TotalGold >= resource.GetUpgradeCost();
+
+            resource.ResourceImage.sprite = ResourcesSprites[isBuyable ? 1 : 0];
+        }
     }
 }
 
